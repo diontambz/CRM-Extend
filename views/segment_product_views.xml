@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="segment_product_view_tree" model="ir.ui.view">
+        <field name="name">segment.product.view.tree</field>
+        <field name="model">segment.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="segment_product_view_form" model="ir.ui.view">
+        <field name="name">segment.product.view.form</field>
+        <field name="model">segment.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_segment_product" model="ir.actions.act_window">
+        <field name="name">Segment Product</field>
+        <field name="res_model">segment.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_segment_product"
+              name="Segment Product"
+              parent="crm.crm_config_settings_menu"
+              action="action_segment_product"
+              sequence="10"/>
+</odoo>
